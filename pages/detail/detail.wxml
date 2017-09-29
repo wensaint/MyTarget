@@ -1,0 +1,41 @@
+<!--detail.wxml-->
+<view class="container">
+  <form bindsubmit="bindTargetSubmit" report-submit="true" class="page-box">
+    <input type="text" value="{{entity.name}}" name="Name" class="we-input input-title {{disableSubmit}}" bindinput="bindTargetBlur" placeholder="小目标名称" />
+
+    <picker mode="date" value="{{entity.duetime}}" name="DueTime" bindchange="bindPickerChange">
+      <input type="text" value="{{entity.duetime}}" class="we-input" disabled placeholder="预期完成日期" />
+    </picker>
+
+    <!--现有子目标-->
+    <block wx:for="{{entity.list}}" wx:key="i">
+      <block wx:if="{{item.status==1}}">
+        <view class="input-group target-finish">
+          <label><switch type="checkbox" checked data-id="{{item.id}}" data-index="{{index}}" color="#555" bindchange="switchChildChange"/></label>
+          <input type="text" value="{{item.name}}" data-field="Name" class="we-input" disabled placeholder="子任务名称" />          
+        </view>
+      </block>
+      <block wx:else>
+        <view class="input-group">
+          <label><switch type="checkbox" data-id="{{item.id}}" data-index="{{index}}" bindchange="switchChildChange"/></label>
+          <input type="text" value="{{item.name}}" data-field="Name" class="we-input" placeholder="子任务名称" />
+          <view class="item-more" bindtap="bindDeleteTap" data-id="{{item.id}}">
+            <icon type="cancel" size="20" color="#cccccc" />
+          </view>
+        </view>
+      </block>
+    </block>
+
+    <!--新增子目标-->
+    <view class="input-group" wx:if="{{entity.status==0}}">
+      <label class="add-label">+</label>
+      <input type="text" name="title" class="we-input" value="{{childval}}" placeholder="添加子目标" bindconfirm="bindChildConfirm" />
+    </view>
+
+    <textarea placeholder="添加备注" value="{{entity.remark}}" name="Remark" class="we-input" />
+
+    <view class="btn-area" wx:if="{{entity.status==0}}">
+      <button type="primary" disabled="{{disableSubmit}}" formType="submit">保存小目标</button>
+    </view>
+  </form>
+</view>

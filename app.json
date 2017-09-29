@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/history/list",
+    "pages/detail/detail",
+    "pages/welcome/welcome"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1c4987",
+    "navigationBarTitleText": "小目标",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#143768"
+  },
+  "tabBar": {
+    "color": "#7e7e7e",
+    "selectedColor": "#1c4987",
+    "backgroundColor": "#f8f8f8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "目标",
+        "iconPath": "img/tab/index.png",
+        "selectedIconPath": "img/tab/index@active.png"
+      },
+      {
+        "pagePath": "pages/history/list",
+        "text": "已完成",
+        "iconPath": "img/tab/history.png",
+        "selectedIconPath": "img/tab/history@active.png"
+      }
+    ]
+  },
+  "debug": false
+}

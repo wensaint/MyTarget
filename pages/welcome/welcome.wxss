@@ -1,0 +1,4 @@
+/* pages/welcome/welcome.wxss */
+.container{background: white;}
+.loading{margin: 60rpx 0;text-align: center;color:#cccccc}
+.loading icon{display: block;margin-bottom: 20rpx;}

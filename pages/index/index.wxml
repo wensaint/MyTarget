@@ -1,0 +1,48 @@
+<import src="../template/common/" />
+
+<!--右键菜单-->
+<template is="indexContextmenu" data="{{...base}}" />
+
+<!--右键菜单-->
+<template is="datatimePikcer" data="{{...base}}" />
+
+<!--index.wxml-->
+<view class="container" bindtap="pageTap">
+  <view class="page-box">
+    <!--add new target-->
+    <view class="{{boxClass}}">
+      <label class="new_target_label">+</label>
+      <input type="text" placeholder="添加新任务" bindconfirm="bindTargetConfirm" value="{{boxVal}}" bindfocus="bindTargetFocus" bindblur="bindTargetBlur" class="new_target_input" />
+    </view>
+    <!--/add new target-->
+
+    <!--index list-->
+    <view class="target-item-container">
+      <view wx:if="{{list.length==0}}" class="target-item-empty">
+        <template is="list-empty" data="{{...base}}" />
+      </view>
+      <block wx:for="{{list}}" wx:key="index">
+        <view class="target-item" data-index="{{index}}" catchlongpress="longP">
+          <view class="target-item-bg" style="width:{{item.percent}}%"></view>
+          <!--show-->
+          <view class="input-group level-{{item.level}}">
+            <label wx:if="{{item.userid}}=={{userID}}"><switch type="checkbox" checked="{{swithChecked}}" data-id="{{item.id}}" data-index="{{index}}" bindchange="switchChange"/></label>
+            <form bindsubmit="bindViewTap" data-id="{{item.id}}" report-submit="true">
+              <button class="warpButton" formType="submit">
+                <label class="target-item-title">{{item.name}}
+                <label wx:if="{{item.duetime != ''}}" class="target-item-time"><icon type="waiting" size="10" color="#e74c3c" /> {{item.duetime}}</label>
+                </label>
+              </button>
+            </form>
+            <view class="img-box">
+              <image mode="aspectFit" src="{{item.img}}" class="target-item-img" />
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!--/index list-->
+
+    <template is="footer" data="{{...base}}" />
+  </view>
+</view>

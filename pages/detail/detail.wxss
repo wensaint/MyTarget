@@ -1,0 +1,11 @@
+/* detail.wxss */
+.we-input{padding-left:4%;}
+.we-input.true{background: #fcecec;}
+textarea.we-input{width:inherit;}
+.input-group{margin: 2rpx 0;padding:2rpx 16rpx;}
+.input-group .we-input{padding-left:12rpx;}
+.target-finish,.target-finish input{text-decoration:line-through;background: #efefef;color: #999; }
+.add-label{font-size: 54rpx;vertical-align: middle;color:#1c4987; text-align: center;padding-right: 18rpx;}
+.item-more{vertical-align: middle;}
+
+.page-box button{width: 94%;}

@@ -1,0 +1,37 @@
+<import src="../template/common/" />
+
+<!--index.wxml-->
+<view class="container">
+  <view class="page-box">
+    <view class="finish-stat">您已达成
+      <label>{{count}}</label> 项目标</view>
+
+    <!--index list-->
+    <view class="target-item-container">
+      <view wx:if="{{list.length==0}}" class="target-item-empty">
+        <template is="list-empty" data="{{...base}}" />
+      </view>
+      <block wx:for="{{list}}" wx:key="index">
+        <view class="target-item">
+          <!--show-->
+          <view class="input-group">
+            <form bindsubmit="bindViewTap" data-id="{{item.id}}" report-submit="true">
+              <button class="warpButton" formType="submit">
+                <label class="target-item-title">{{item.name}}
+                  <label wx:if="{{item.finish != ''}}" class="target-item-finishtime">
+                    <icon type="waiting" size="10" color="#b2b2b2" /> {{item.finish}}</label>
+                </label>
+              </button>
+            </form>
+            <view class="img-box">
+              <image mode="aspectFit" src="{{item.img}}" class="target-item-img" />
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!--/index list-->
+
+    <template is="footer" data="{{...base}}" />
+  </view>
+</view>

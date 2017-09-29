@@ -1,0 +1,18 @@
+/**index.wxss**/
+.finish-stat{width:100%;background: #fcf9ec;margin: 20rpx auto; border-radius: 10rpx;padding:20rpx 3%;}
+.finish-stat label{font-weight: 600;color:#e64340}
+
+.target-item-empty{margin: 60rpx 0;text-align: center;color:#cccccc}
+.target-item-empty icon{display: block;margin-bottom: 20rpx;}
+
+.target-item{position: relative;background: white;margin-bottom: 2rpx;padding:0 3%;}
+.target-item-bg{background:#1AAD19;height:2rpx;position: absolute;bottom:-2rpx;left:0;}
+.input-group{position: relative;z-index: 4;margin: 0;height:100rpx;}
+.input-group form{width: 100%;display: table-cell;vertical-align:middle;}
+.target-item-title{padding-left: 10rpx;font-weight: 500}
+.target-item-img{width:60rpx;height: 60rpx;border-radius: 30rpx;margin-top: 12rpx;}
+.target-item-finishtime{color:#b2b2b2;font-size: 24rpx;font-weight:normal}
+
+.target-item-action{position: absolute;top:0;right:0;height: 100%;background-color: #e64340;width: 180rpx;text-align: center; z-index:1}
+.target-item-action .target-item-del{padding:16rpx 0; text-align: center;color:white;}
+.target-item-action .target-item-del icon{vertical-align:middle;display: inline-block;margin-bottom: 4rpx;}

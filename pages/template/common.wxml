@@ -1,0 +1,49 @@
+<template name="list-empty">
+  <icon type="info" size="60" color="#cccccc" />{{emptyTip}}
+</template>
+
+<template name="footer">
+  <!--footer-->
+  <view class="footer">{{copyright}}</view>
+  <!--/footer-->
+</template>
+
+<template name="indexContextmenu">
+  <view class="popModal" style="{{topStyle}}" hidden="{{popHidden}}">
+    <form bindsubmit="modalChange" data-index="1" report-submit="true">
+      <button class="warpButton" formType="submit">提醒时间</button>
+    </form>
+    <form bindsubmit="modalChange" data-index="2" report-submit="true">
+      <button class="warpButton" formType="submit">优先级</button>
+    </form>
+    <form bindsubmit="modalChange" data-index="3" report-submit="true">
+      <button class="warpButton" formType="submit">删除</button>
+    </form>
+  </view>
+</template>
+
+<template name="datatimePikcer">
+  <view class="customerPicker_mask" wx:if="{{pickerShow}}" catchtap="bindMaskTap">
+    <view class="customerPicker">
+      <view class="customerPicker_button">
+        <form catchsubmit="bindPickerChange" data-index="1" class="cancel" report-submit="true">
+          <button class="warpButton" formType="submit">取消</button>
+        </form>
+        <form catchsubmit="bindPickerChange" data-index="2" class="confirm" report-submit="true">
+          <button class="warpButton" formType="submit">确认</button>
+        </form>
+      </view>
+      <picker-view indicator-class="customerPicker_indicator" class="customerPicker_box" value="{{datevalue}}" data-index="0" catchchange="bindPickerChange">
+        <picker-view-column class="customerPicker_col1">
+          <view wx:for="{{days}}" wx:key="id">{{item.name}}</view>
+        </picker-view-column>
+        <picker-view-column class="customerPicker_col2">
+          <view wx:for="{{hours}}" wx:key="id">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column class="customerPicker_col3">
+          <view wx:for="{{minutes}}" wx:key="id">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+</template>

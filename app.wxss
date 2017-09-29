@@ -1,0 +1,164 @@
+/**app.wxss**/
+
+page {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #ebebeb;
+  font-size: 32rpx;
+}
+.page-box{width: 100%;}
+
+.warpButton {
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.warpButton:after {
+  content: '';
+  width: auto;
+  height: auto;
+}
+
+.footer {
+  text-align: center;
+  padding: 24rpx;
+  color: #999;
+  font-size: 24rpx;
+  position: relative;
+}
+
+.footer:before, .footer:after {
+  content: " ";
+  position: absolute;
+  top: 52%;
+  background: #999;
+  width: 15%;
+  height: 1px;
+}
+
+.footer:before {
+  left: 25%;
+}
+
+.footer:after {
+  right: 25%;
+}
+
+/**input***/
+
+.we-input {
+  background: white;
+  margin: 20rpx 0;
+  padding:20rpx;
+}
+
+.we-input .input-title {
+  font-size: 36rpx;
+  font-weight: 500;
+}
+
+.input-group {
+  width: inherit;
+  background: white;
+  margin: 20rpx 0;
+}
+
+.input-group label, .input-group input, .input-group view, .input-group picker {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.input-group .we-input {
+  width: 100%;
+}
+
+/***poplayer****/
+
+.popModal {
+  position: absolute;
+  background: white;
+  left: 25%;
+  width: 40%;
+  padding: 20rpx 5%;
+  box-shadow: 1px 1px 1px 1px #ccc;
+  z-index: 9;
+}
+
+.popModal .warpButton {
+  padding: 20rpx;
+  border-bottom: solid 2rpx #efefef;
+  border-radius: 0;
+}
+
+/*****customerPicker*******/
+
+.customerPicker_mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  position: fixed;
+}
+
+.customerPicker {
+  width: 100%;
+  height: 480rpx;
+  position: absolute;
+  bottom: 0;
+  z-index: 6;
+  background: white;
+}
+
+.customerPicker_box {
+  height: 400rpx;
+  z-index: 100;
+  background: white;
+}
+
+.customerPicker_button {
+  height: 60rpx;
+  padding: 10rpx 3%;
+  background: #f8f8f8;
+}
+
+.customerPicker_button .cancel {
+  float: left;
+}
+
+.customerPicker_button .cancel button {
+  color: #888;
+}
+
+.customerPicker_button .confirm {
+  float: right;
+}
+
+.customerPicker_button .confirm button {
+  color: #1aad19;
+}
+
+.customerPicker_indicator {
+  height: 90rpx;
+}
+
+.customerPicker .customerPicker_col1, .customerPicker .customerPicker_col2,
+.customerPicker .customerPicker_col3 {
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.customerPicker .customerPicker_col1 {
+  padding-left: 20%;
+}

@@ -1,0 +1,8 @@
+<!--pages/welcome/welcome.wxml-->
+<view class="container">
+  <view class="page-box">
+    <view class="loading">
+      <icon type="info" size="60" color="#cccccc" />为您加载小目标中...
+    </view>
+  </view>
+</view>
